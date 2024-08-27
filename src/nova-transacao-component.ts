@@ -1,6 +1,9 @@
 const elementoFormulario = document.querySelector(".block-nova-transacao form") as HTMLFormElement;
+const elementoSaldo = document.querySelector("#saldo") as HTMLElement;
+
 elementoFormulario.addEventListener("submit", function(event) {
     event.preventDefault();
+    
     if (!elementoFormulario.checkValidity()) {
         alert("Por favor, preencha todos os campos da transação!");
         return;
@@ -10,26 +13,27 @@ elementoFormulario.addEventListener("submit", function(event) {
     const inputValor = elementoFormulario.querySelector("#valor") as HTMLInputElement;
     const inputData = elementoFormulario.querySelector("#data") as HTMLInputElement;
 
-    let tipoTransacao: string = inputTipoTransacao.value;
+    let tipoTransacao: TipoTransacao = inputTipoTransacao.value as TipoTransacao;
     let valor: number = inputValor.valueAsNumber;
     let data: Date = new Date(inputData.value);
 
-    if (tipoTransacao == "Depósito") {
+    if (tipoTransacao === TipoTransacao.DEPOSITO) {
         saldo += valor;
-    } else if (tipoTransacao == "Transferência" || tipoTransacao == "Pagamento de Boleto") {
+    } else if (tipoTransacao === TipoTransacao.TRANSFERENCIA || tipoTransacao === TipoTransacao.PAGAMENTO_BOLETO) {
         saldo -= valor;
     } else {
         alert("Tipo de Transação é inválido!");
         return;
     }
 
-    elementoSaldo.textContent = saldo.toLocaleString("pt-br", { style: "currency", currency: "BRL" })
+    // Certifique-se de que `elementoSaldo` está corretamente identificado como um HTMLElement.
+    elementoSaldo.textContent = saldo.toLocaleString("pt-br", { style: "currency", currency: "BRL" });
     
     const novaTransacao: Transacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
         data: data,
-    }
+    };
 
     console.log(novaTransacao);
     elementoFormulario.reset();
