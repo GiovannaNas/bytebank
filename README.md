@@ -2,19 +2,6 @@
 
 Este é um projeto desenvolvido durante o curso de TypeScript na Alura. A aplicação Bytebank foi criada com o objetivo de aplicar e consolidar os conhecimentos adquiridos ao longo do curso, utilizando TypeScript para melhorar a qualidade e a segurança do código.
 
-## Índice
-
-- [Configuração do Ambiente](#configuração-do-ambiente)
-- [Instalação das Ferramentas](#instalação-das-ferramentas)
-- [Desenvolvimento com JavaScript](#desenvolvimento-com-javascript)
-- [Refatoração para TypeScript](#refatoração-para-typescript)
-- [Arquivo tsconfig.json](#arquivo-tsconfigjson)
-- [Trabalhando com Tipos](#trabalhando-com-tipos)
-- [Estrutura de Arquivos](#estrutura-de-arquivos)
-- [Módulos e Import/Export](#módulos-e-importexport)
-- [Armazenamento e Exibição de Dados](#armazenamento-e-exibição-de-dados)
-- [Conclusão](#conclusão)
-
 ## Configuração do Ambiente
 
 Antes de iniciar o desenvolvimento, foi necessário configurar o ambiente para suportar o TypeScript. Isso envolveu a criação de um projeto simples utilizando TypeScript e a preparação de todas as ferramentas necessárias.
